@@ -26,7 +26,7 @@
     font-weight: 400;
 }
 
-.hreo__btn{
+.hero__btn{
     width: 117px;
     height: 34px;
     border-radius: 60px;
@@ -34,18 +34,23 @@
     color: white;
     background: #000;
     margin-top: 48px;
+    transition: 1s;
+}
+.hero__btn:hover{
+    color: #000;
+    background: #fff;
 }
 
 .hero__img{
     position: relative;
     top: -518px;
-    left: -120px;
+    left: -150px;
 }
 
 .img__bigBoom{
     position: absolute;
     top: 0;
-    left: 820px;
+    left: 793px;
     height: 800px;
 }
 .img__star2{
