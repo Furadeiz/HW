@@ -11,8 +11,13 @@
     padding-right: calc(50% - 600px);
 }
 
+.hero__background{
+    height: 800px;
+}
+
 .hero{
     padding-top: 196px;
+    position: relative;
 }
 
 .hero__title{
@@ -41,16 +46,11 @@
     background: #fff;
 }
 
-.hero__img{
-    position: relative;
-    top: -518px;
-    left: -150px;
-}
 
 .img__bigBoom{
     position: absolute;
     top: 0;
-    left: 793px;
+    left: 676px;
     height: 800px;
 }
 .img__star2{
@@ -76,9 +76,16 @@
     top:538px;
     left:948px;
 }
+.img__minboom{
+    display: none;
+}
+
 
 .main{
     background: #000;
+}
+.main__titleMobile{
+    display: none;
 }
 .main__title{
     color: #fff;
