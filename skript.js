@@ -5,11 +5,11 @@ a = 20;
 alert(`Задание 1.2 : ${a}`)
 
 // задание 2
-let ageIphone = 2007;
+const ageIphone = 2007;
 alert(`Первый айфон был создан ${ageIphone}`)
 
 // задание 3
-let creatorJs = "Брендан Айк";
+const creatorJs = "Брендан Айк";
 alert(creatorJs)
 
 // задание 4
@@ -35,8 +35,8 @@ num += 5;
 num -= 3;
 num *= 7;
 num /= 3;
-num += 1;
-num -= 1;
+num++;
+num--;
 alert(num);
 
 // задание 8

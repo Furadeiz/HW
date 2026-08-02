@@ -32,8 +32,11 @@
 }
 
 .hero__btn{
-    width: 117px;
-    height: 34px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: 'Montserrat';
     border-radius: 60px;
     border: 1px solid #000;
     color: white;
