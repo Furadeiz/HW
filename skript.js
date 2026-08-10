@@ -1,55 +1,75 @@
-// задание 1
-let a = 10;
-alert(`Задание 1 : ${a}`);
-a = 20;
-alert(`Задание 1.2 : ${a}`)
+// Задание 1
+let password = 'пароль'; 
+let confirmation = String(prompt('Введите пароль'));
 
-// задание 2
-const ageIphone = 2007;
-alert(`Первый айфон был создан ${ageIphone}`)
+if (confirmation === 'пароль') {
+    console.log('Пароль введен верно');
+} 
+else {
+    console.log('Пароль введен неправильно');
+}
 
-// задание 3
-const creatorJs = "Брендан Айк";
-alert(creatorJs)
+// Задание 2
+let c = Number(prompt('Введите число от 0 до 10'));
+c >= 0 && 10 ? console.log('Верно'): console.log('Неверно');
 
-// задание 4
-let A =10;
-let b = 2;
-alert(`оператор сложения ${A + b}`);
-alert(`оператор вычитани ${A - b}`);
-alert(`оператор умножения ${A * b}`);
-alert(`оператор деления ${A / b}`);
+// Задание 3
+let d = prompt('Введите число');
+let e = prompt('Введите число');
+if (d > 100 || e > 100) {
+    console.log('Верно');
+} 
+else {
+    console.log('Неверно');
+}
 
-// задание 5
-let result = 2 ** 5;
-alert(`степень ${result}`);
+// Задание 4
+let a = '2';
+let b = '3';
 
-// задание 6
-let a1 = 9;
-let b1 = 2;
-alert(`остаток от деления ${a1 % b1}`)
+console.log(+a + +b);
 
-// задание 7
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num++;
-num--;
-alert(num);
+// Задание 5 
+let monthNumber = Number(prompt('Введите номер месяца'));
+switch (monthNumber) {
+    case 1:
+        console.log('Январь')
+        break;
+    case 2:
+        console.log('Февраль')
+        break;
+    case 3:
+        console.log('Март')
+        break;
+    case 4:
+        console.log('Апрель')
+        break;
+    case 5:
+        console.log('Май')
+        break;
+    case 6:
+        console.log('Июнь')
+        break;
+    case 7:
+        console.log('Июль')
+        break;
+    case 8:
+        console.log('Август')
+        break;
+    case 9:
+        console.log('Сентябрь')
+        break;
+    case 10:
+        console.log('Октябрь')
+        break;
+    case 11:
+        console.log('Ноябрь')
+        break;
+    case 12:
+        console.log('Декабрь')
+        break;
 
-// задание 8
-let age = Number (prompt(`Сколько вам лет`))
-alert(age);
-
-// задание 9
-let user ={
-    name : 'Vasu',
-    age : 24,
-    isAdmin: true
-};
-
-// задание 10
-let name = prompt(`Давайте познакомимся напишите ваше имя`);
-alert(`Привет, ${name}!`);
+    default:
+        console.log('Вы ввели не номер месяца')
+        break;
+}

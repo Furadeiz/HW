@@ -187,6 +187,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 32px;
+    position: relative;
 
 }
 
@@ -214,16 +215,30 @@
     color: #fff;
     background: #000;
     border-radius: 60px;
+    border: #000 1px solid;
     width: 247px;
     height: 66px;
     margin-top: 36px;
     font-size: 24px;
     font-weight: 600;
+    transition: 1s;
+}
 
+.cart__btn:hover{
+    color: #000;
+    background: #fff;
 }
 
 .miniGame__img{
     border-radius: 30px;
+}
+
+.miniGame__imgTwo{
+    position: absolute;
+    width: 384px;
+    height: 458px;
+    left: 109px;
+    top: 42px;
 }
 
 .footer{
