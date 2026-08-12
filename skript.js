@@ -11,7 +11,7 @@ else {
 
 // Задание 2
 let c = Number(prompt('Введите число от 0 до 10'));
-c >= 0 && 10 ? console.log('Верно'): console.log('Неверно');
+c >= 0 && c<= 10 ? console.log('Верно'): console.log('Неверно');
 
 // Задание 3
 let d = prompt('Введите число');
