@@ -1,55 +1,38 @@
-// задание 1
-let a = 10;
-alert(`Задание 1 : ${a}`);
-a = 20;
-alert(`Задание 1.2 : ${a}`)
+// Задание 1
+for (let i = 0;  i < 2 ; i++) {
+    console.log("Привет")
+}
 
 // задание 2
-let ageIphone = 2007;
-alert(`Первый айфон был создан ${ageIphone}`)
+for (let i = 1;  i <= 5 ; i++) {
+    console.log(i)
+}
 
-// задание 3
-let creatorJs = "Брендан Айк";
-alert(creatorJs)
+//Задание 3
+for (let i = 7;  i <= 22 ; i++) {
+    console.log(i)
+}
 
-// задание 4
-let A =10;
-let b = 2;
-alert(`оператор сложения ${A + b}`);
-alert(`оператор вычитани ${A - b}`);
-alert(`оператор умножения ${A * b}`);
-alert(`оператор деления ${A / b}`);
+// Задание 4
+let obj = {
+    "Коля" : '200',
+    "Вася" : '300',
+    "Петя" : '400'
+}
 
-// задание 5
-let result = 2 ** 5;
-alert(`степень ${result}`);
+for (let key in obj) {
+    console.log(`${key}: ${obj[key]}`)
+}
 
-// задание 6
-let a1 = 9;
-let b1 = 2;
-alert(`остаток от деления ${a1 % b1}`)
+// Задание 5
+let num = Number(0);
+let n = Number(0);
+for (n = 1000; n >= 50; n /= 2) {
+    num++
+}
+console.log(`В результате получилось ${n}, потребовалось операций ${num}`);
 
-// задание 7
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num += 1;
-num -= 1;
-alert(num);
-
-// задание 8
-let age = Number (prompt(`Сколько вам лет`))
-alert(age);
-
-// задание 9
-let user ={
-    name : 'Vasu',
-    age : 24,
-    isAdmin: true
-};
-
-// задание 10
-let name = prompt(`Давайте познакомимся напишите ваше имя`);
-alert(`Привет, ${name}!`);
+// Задание 6 
+for (let fiveDay = 7; fiveDay < 31 ; fiveDay += 7 ) {
+    console.log(`Сегодня пятница, ${fiveDay}-е число. Необходимо подготовить отчет.`);
+}

@@ -32,8 +32,11 @@
 }
 
 .hero__btn{
-    width: 117px;
-    height: 34px;
+    width: 247px;
+    height: 66px;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: 'Montserrat';
     border-radius: 60px;
     border: 1px solid #000;
     color: white;
@@ -68,13 +71,13 @@
 .img__star4{
     position: absolute;
     top:568px;
-    left:1013px;
+    left: 877px;
 }
 
 .img__star5{
     position: absolute;
     top:538px;
-    left:948px;
+    left: 817px;
 }
 .img__minboom{
     display: none;
@@ -83,6 +86,45 @@
 
 .main{
     background: #000;
+    position: relative;
+}
+
+.img__mainBig{
+    position: absolute;
+    left: 805px;
+    top: 77px;
+}
+
+.img__main-1{
+    position: absolute;
+    left: 25px;
+    top: 770px;
+}
+
+.img__main-2{
+    position: absolute;
+    left: 40px;
+    top: 822px;
+}
+.img__main-3{
+    position: absolute;
+    top: 1563px;
+    left: 1104px;
+}
+.img__main-4{
+    position: absolute;
+    top: 1596px;
+    left: 1147px;
+}
+.img__main-5{
+    position: absolute;
+    bottom: 45px;
+    left: 1076px;
+}
+.img__main-6{
+    position: absolute;
+    bottom: 65px;
+    left: 1147px;
 }
 .main__titleMobile{
     display: none;
@@ -162,6 +204,80 @@
     font-weight: 700;
     margin-left: 32px;
     margin-top: 16px;
+}
+
+.miniGame{
+    padding-bottom: 144px;
+}
+
+.miniGame__title{
+ color: #fff;
+ font-weight: 700;
+ font-size: 64px;
+ margin-top: 96px;
+ padding-bottom: 72px;
+}
+
+.miniGame__cart{
+    background-color: #fff;
+    width: 1200px;
+    height: 500px;
+    border-radius:30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    position: relative;
+
+}
+
+.cart{
+    margin-left: 48px;
+    margin-top: 48px;
+}
+.cart_change{
+    width: 504px;
+    margin-right: 48px;
+}
+
+.cart__title{
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.cart__text{
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.cart__btn{
+    color: #fff;
+    background: #000;
+    border-radius: 60px;
+    border: #000 1px solid;
+    width: 247px;
+    height: 66px;
+    margin-top: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    transition: 1s;
+}
+
+.cart__btn:hover{
+    color: #000;
+    background: #fff;
+}
+
+.miniGame__img{
+    border-radius: 30px;
+}
+
+.miniGame__imgTwo{
+    position: absolute;
+    width: 384px;
+    height: 458px;
+    left: 109px;
+    top: 42px;
 }
 
 .footer{
