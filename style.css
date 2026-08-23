@@ -208,6 +208,9 @@
 
 .miniGame{
     padding-bottom: 144px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .miniGame__title{
@@ -225,9 +228,14 @@
     border-radius:30px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 32px;
     position: relative;
 
+}
+
+.miniGame__cart_reverse{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
 .cart{
@@ -235,7 +243,7 @@
     margin-top: 48px;
 }
 .cart_change{
-    width: 504px;
+    width: 100%;
     margin-right: 48px;
 }
 
