@@ -138,10 +138,33 @@ let resultAnswer = guessNumber.includes(answer);
 
     // Задание 9
 
-    let twoArray = [[1, 2, 3],[4, 5, 6]];
+    const twoArray = [[1, 2, 3],[4, 5, 6]];
 
     let result = [].concat(...twoArray);
     console.log(result); 
 
     //Задание 10
     
+    const sumTwoElement = [1, 2, 3, 4, 5, 6, 7];
+
+    for (let i = 0; i < sumTwoElement.length; i++) {
+        if (i == sumTwoElement.length - 1) {
+            console.log(sumTwoElement[i]);
+        } else {
+             let j = sumTwoElement[i] + sumTwoElement[i + 1]
+        console.log(j);
+        }
+    }
+    // Задание 11
+
+    const array = prompt(`Введите несколько чисел до 10`);
+    
+    if (array) {
+        const stringArray = array.split('');
+        const numberArray = stringArray.map(Number);
+        const squqreArray = numberArray.map(item => item ** 2);
+
+        console.log(squqreArray);
+    }
+
+    //задание 12
