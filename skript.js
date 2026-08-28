@@ -1,98 +1,147 @@
-// Задание 1
-let min = (a, b) => {return a <= b ? a : b;};
+// Основное задание по верстке макета
 
-console.log(min(8, 9));
+const quiz = [
+    {
+        question: "Какой цвет неба?",
+        optons: ["1. Красный ", " 2. Синий ", "3. Зелёный ",],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько дней в недели?",
+        optons: ["1. Шесть ", " 2. Семь ", "3. восемь ",],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько у человека пальцев на одной руке?",
+        optons: ["1. Четыре ", " 2. Пять ", "3. Шесть ",],
+        correctAnswer: 2
+    },
+];
 
-// Задание 2 
-function evenNumber() {
-    let number = prompt(`Введите чесло для проверки чётности`);
+let counter = 0;
 
-    if (number % 2 == 0) {
-        return `Чесло чётное`
-    } 
-    else {
-        return `Чесло нечётное`
+
+let colorSky = prompt(`Отведте на вопрос : ${quiz[0].question} \n ${quiz[0].optons}`);
+
+if (colorSky == quiz[0].correctAnswer) {
+    console.log(`Ответ верный`);
+    counter++;
+} else {
+    console.log(`Ответ не верный `);
+}
+
+
+let numberDay = prompt(`Отведте на вопрос : ${quiz[1].question} \n ${quiz[1].optons}`);
+
+if (numberDay == quiz[1].correctAnswer) {
+    console.log(`Ответ верный`);
+    counter++;
+} else {
+    console.log(`Ответ не верный `);
+}
+
+
+let numberFinger = prompt(`Отведте на вопрос : ${quiz[2].question} \n ${quiz[2].optons}`);
+
+if (numberFinger == quiz[2].correctAnswer) {
+    console.log(`Ответ верный`);
+    counter++;
+} else {
+    console.log(`Ответ не верный `);
+}
+
+let numberAnswer = alert(`Количество правельных ответов : ${counter}`);
+
+
+// Задания, для работы с кодом, 1
+
+const item = [1, 5, 4, 10, 0, 3];
+
+for (let element = 0 ; element < item.length; element++ ) {
+    if (item[element] == 10){
+        console.log(10);
+        break;
+    }
+    console.log(item[element]);
+}
+
+//Задание 2 
+
+for (let index = 0; index < item.length; index++) {
+    if (item[index] == 4) {
+        console.log(index)
     }
 }
 
-console.log(evenNumber());
+//Задание 3 
 
-// Задание 3 
-function numberRoot() {
-    let number = prompt(`Введите чело для определения кводрата`);
+const figure = [1, 3, 5, 10, 20];
 
-    if (number) {
-        return number * number;
+let joinResult  = figure.join(' ');
+
+console.log(joinResult);
+
+//Задание 4
+
+const multiArray = [[1, 1, 1],[1, 1, 1],[1, 1, 1]];
+
+for (const item of multiArray) {
+
+    for (let index = 0; index < item.length; index++) {
+        if (index == 0) {
+            console.log(`${item}`);
+        } 
     }
 }
 
-console.log(numberRoot());
+//Задание 5 
 
-// Задание 4
-function age() {
-    let correctAge = prompt("Сколько вам лет?");
+const pushArray = [1, 1, 1];
 
-    if (correctAge >= 0 && correctAge <= 12) {
-        return 'Привет, друг!'
-    } 
-    else if(correctAge > 12 && correctAge <= 115) {
-        return 'Добро пожаловать!'
-    }
-    else {
-        return `Вы ввели неправильное значение`
+for (let index = 0; index < pushArray.length; index++) {
+    if (index == 0 ) {
+        pushArray.push(2, 2, 2);
     }
 }
-console.log(age());
+console.log(`${pushArray}`);
 
-// Задание 5 
-function composition() {
-    let numberOne = prompt(`Введите первое чело для произведения`);
-    let numberTwo = prompt(`Введите второе чело для произведения`);
+// задание 6
 
-    if (isNaN(numberOne) == false && isNaN(numberTwo) == false) {
-        return numberOne * numberTwo;
-    } 
-    else {
-        return`Одно или оба значения не являются числом`
+const sortArray = [9, 8, 7, 'a', 6, 5];
+
+for (let index = 0; index < sortArray.length; index++) {
+    sortArray.sort().pop();
+
+    console.log(`${sortArray}`);
+    break;
+}
+
+//Задание 7
+
+const guessNumber = [9, 8, 7, 6, 5];
+
+let  answer = Number(prompt(`Угадайте число, которое есть в массиве, до 10 `)) ;
+
+let resultAnswer = guessNumber.includes(answer);
+
+    if (resultAnswer) {
+        console.log(`Угадали`);
+    } else {
+        console.log(`Не угадали`);
     }
-}
-console.log(composition());
 
-// Задание 6 
-function cubeNumber() {
-    let number = prompt(`Введите значение для введение его в куб`);
+    // Задание 8
 
-    if (isNaN(number)) {
-        return'Переданный параметр не является числом'
-    } 
-    else {
-        return`${number} в кубе равняется ${number ** 2}`
-    }
-}
+    let stringReverse = "abcdef";
 
-console.log(cubeNumber());
+    console.log(stringReverse.split('').reverse().join(''));
 
-// Задание 7
-function getArea() {
-    return 3.14 * this.radius ** 2
-}
+    // Задание 9
 
-function getPerimeter() {
-    return 2 * 3.14 * this.radius
-}
+    let twoArray = [[1, 2, 3],[4, 5, 6]];
 
-const cricle1 = {
-    radius : 13,
-    getArea : getArea,
-    getPerimeter : getPerimeter 
-}
-const cricle2 = {
-    radius : 17,
-    getArea : getArea,
-    getPerimeter : getPerimeter
-}
+    let result = [].concat(...twoArray);
+    console.log(result); 
 
-console.log(cricle1.getArea());
-console.log(cricle1.getPerimeter());
-console.log(cricle2.getArea());
-console.log(cricle2.getPerimeter());
+    //Задание 10
+    
