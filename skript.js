@@ -168,3 +168,18 @@ let resultAnswer = guessNumber.includes(answer);
     }
 
     //задание 12
+
+    const arrayWords = prompt(`Введите слово`);
+    
+        if (arrayWords !== null) {
+            const arrayWordsLength = arrayWords.split('');
+            const count = arrayWordsLength.length;
+            console.log(`Количество символов в слове ${count}`)
+        }
+        else{
+            console.log(`Вы ничего не ввели`)
+        }
+
+        //Задание 13
+
+        
