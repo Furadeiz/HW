@@ -155,6 +155,7 @@ let resultAnswer = guessNumber.includes(answer);
         console.log(j);
         }
     }
+
     // Задание 11
 
     const array = prompt(`Введите несколько чисел до 10`);
@@ -171,15 +172,69 @@ let resultAnswer = guessNumber.includes(answer);
 
     const arrayWords = prompt(`Введите слово`);
     
-        if (arrayWords !== null) {
-            const arrayWordsLength = arrayWords.split('');
-            const count = arrayWordsLength.length;
-            console.log(`Количество символов в слове ${count}`)
-        }
-        else{
+        if (arrayWords === null || arrayWords === '') {
+            
             console.log(`Вы ничего не ввели`)
         }
+        else{
+            const arrayWordsLength = arrayWords.split('');
+            const count = arrayWordsLength.length;
+            console.log(`Количество символов в слове ${count}`);
+        }
 
-        //Задание 13
+    //Задание 13
 
-        
+    const integerNumber = prompt(`Ввидите целые числа через пробел`);
+
+    if (integerNumber === null || integerNumber === '') 
+        {
+            console.log(`Вы ничего не ввели`)
+        }
+        else{
+            const separation =  integerNumber.split(' ');
+            const filterNumber = separation.map(Number).filter(num => !isNaN(num)).filter(num => num < 0);
+
+            console.log(filterNumber);
+            }
+    
+    // Задание 14
+
+    let userLength = prompt(`Введите какой длены массив вы хотите`);
+    const length = Number(userLength);
+
+    if (isNaN(length) || length <= 0) {
+        console.log(`Введите положительное число`)
+    } else {
+        const numbers = [];
+
+        for (let i = 0; i < length; i++) {
+            const random = Math.floor(Math.random() * 11);
+            numbers.push(random);
+        }
+
+        console.log('Исходный массив : ', numbers);
+
+        const evenNumber = numbers.filter(num => num % 2 == 0);
+
+        console.log('Чётные числа из массива : ', evenNumber);
+    }
+     
+    // Задангие 15
+
+    const lengthArray = 6;
+
+    const arithmetic = [];
+
+    if (lengthArray) {
+
+    for (let i = 0; i < lengthArray; i++) {
+        const random = Math.floor(Math.random() * 10) + 1;
+        arithmetic.push(random);
+       
+    }
+    const sum = arithmetic.reduce((acc, cur) => acc + cur, 0 );
+    const resultArithmetic = sum / lengthArray;
+    
+    console.log("Массив:", arithmetic);
+    console.log(`Среднее арифмитическое : ${resultArithmetic}`);
+}
