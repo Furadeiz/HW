@@ -20,37 +20,54 @@ const quiz = [
 
 let counter = 0;
 
-
 let colorSky = prompt(`Отведте на вопрос : ${quiz[0].question} \n ${quiz[0].optons}`);
+
+    if (colorSky == null) {
+            console.log(('Вы прервали викторину.'));
+        }
 
 if (colorSky == quiz[0].correctAnswer) {
     console.log(`Ответ верный`);
     counter++;
-} else {
+}else if(colorSky <= 3) {
     console.log(`Ответ не верный `);
+}else {
+    console.log('Вы ввели некоректный ответ');
 }
 
 
 let numberDay = prompt(`Отведте на вопрос : ${quiz[1].question} \n ${quiz[1].optons}`);
 
+    if (numberDay == null) {
+            console.log(('Вы прервали викторину.'));
+        } 
+
 if (numberDay == quiz[1].correctAnswer) {
     console.log(`Ответ верный`);
     counter++;
-} else {
-    console.log(`Ответ не верный `);
+}else if(numberDay <= 3) {
+     console.log(`Ответ не верный `);
+}else {
+    console.log('Вы ввели некоректный ответ');
 }
 
 
 let numberFinger = prompt(`Отведте на вопрос : ${quiz[2].question} \n ${quiz[2].optons}`);
 
+    if (numberFinger == null) {
+            console.log(('Вы прервали викторину.'));
+        } 
+
 if (numberFinger == quiz[2].correctAnswer) {
     console.log(`Ответ верный`);
     counter++;
-} else {
-    console.log(`Ответ не верный `);
+}else if(numberFinger <= 3 ) {
+     console.log(`Ответ не верный `);
+}else {
+    console.log('Вы ввели некоректный ответ');
 }
 
-let numberAnswer = alert(`Количество правельных ответов : ${counter}`);
+console.log(`Количество правельных ответов : ${counter}`);
 
 
 // Задания, для работы с кодом, 1
@@ -85,14 +102,7 @@ console.log(joinResult);
 
 const multiArray = [[1, 1, 1],[1, 1, 1],[1, 1, 1]];
 
-for (const item of multiArray) {
-
-    for (let index = 0; index < item.length; index++) {
-        if (index == 0) {
-            console.log(`${item}`);
-        } 
-    }
-}
+console.log(multiArray);
 
 //Задание 5 
 
