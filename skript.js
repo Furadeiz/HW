@@ -18,12 +18,16 @@ const quiz = [
     },
 ];
 
+
+function startQuiz() {
+    
 let counter = 0;
 
 let colorSky = prompt(`Отведте на вопрос : ${quiz[0].question} \n ${quiz[0].optons}`);
 
-    if (colorSky == null) {
+    if (colorSky == null || colorSky == '') {
             console.log(('Вы прервали викторину.'));
+            return;
         }
 
 if (colorSky == quiz[0].correctAnswer) {
@@ -38,8 +42,9 @@ if (colorSky == quiz[0].correctAnswer) {
 
 let numberDay = prompt(`Отведте на вопрос : ${quiz[1].question} \n ${quiz[1].optons}`);
 
-    if (numberDay == null) {
+    if (numberDay == null || numberDay == '') {
             console.log(('Вы прервали викторину.'));
+            return;
         } 
 
 if (numberDay == quiz[1].correctAnswer) {
@@ -54,14 +59,15 @@ if (numberDay == quiz[1].correctAnswer) {
 
 let numberFinger = prompt(`Отведте на вопрос : ${quiz[2].question} \n ${quiz[2].optons}`);
 
-    if (numberFinger == null) {
+    if (numberFinger == null || numberFinger == '') {
             console.log(('Вы прервали викторину.'));
+            return;
         } 
 
 if (numberFinger == quiz[2].correctAnswer) {
     console.log(`Ответ верный`);
     counter++;
-}else if(numberFinger <= 3 ) {
+}else if(numberFinger <= 3){
      console.log(`Ответ не верный `);
 }else {
     console.log('Вы ввели некоректный ответ');
@@ -69,6 +75,8 @@ if (numberFinger == quiz[2].correctAnswer) {
 
 console.log(`Количество правельных ответов : ${counter}`);
 
+}
+startQuiz();
 
 // Задания, для работы с кодом, 1
 
