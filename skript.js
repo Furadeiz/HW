@@ -120,7 +120,6 @@ for (let i = 0; i < oneArray.length; i++) {
 }
     console.log(multiArray);
 
-
 //Задание 5 
 
 const pushArray = [1, 1, 1];
