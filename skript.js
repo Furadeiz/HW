@@ -108,9 +108,18 @@ console.log(joinResult);
 
 //Задание 4
 
-const multiArray = [[1, 1, 1],[1, 1, 1],[1, 1, 1]];
+const oneArray = [1, 1, 1];
+let multiArray = [];
 
-console.log(multiArray);
+
+for (let i = 0; i < oneArray.length; i++) {
+    multiArray[i] = [];
+    for (let j = 0; j < oneArray.length; j++) {
+        multiArray[i][j] = oneArray[j];
+    }
+}
+    console.log(multiArray);
+
 
 //Задание 5 
 
