@@ -1,5 +1,142 @@
 // Основное задание по верстке макета
+//мини игра Угадай число
+document.getElementById('myButton').onclick = guessNumber;
 
+function guessNumber() {
+    
+    let num = Math.floor(Math.random() * 100) + 1;
+
+    while (true) {
+
+    let answer = prompt(`Угадайте число от 1 до 100`);
+        
+        if (answer == '') {
+            console.log(`Вы нечего не ввели`);
+            continue;
+        } 
+        if (answer === null) {
+            console.log(`Вы прервали игру`);
+            return;
+        }
+
+
+        if( answer < num) {
+            alert(`Введённое число меньше`);
+        }
+        else if( answer > num) {
+            alert(`Введённое число больше`);
+        }
+        else {
+            alert(`Вы угадали число`);
+            console.log(`Поздравляю`);
+            return;
+        }
+    }
+}
+
+// мини игра Простая арефметика
+document.getElementById('myButton').onclick = simpleArithmetic;
+function simpleArithmetic() {
+
+    while (true) {
+        
+    let taskSumAddentOne = Math.floor(Math.random() * 100);
+    let taskSumAddentTwo = Math.floor(Math.random() * 100);
+    let taskSumAddentResult = taskSumAddentOne + taskSumAddentTwo;
+
+    let taskSubtAddentOne = Math.floor(Math.random() * 100);
+    let taskSubtAddentTwo = Math.floor(Math.random() * 100);
+    let taskSubtAddentResult = taskSubtAddentOne - taskSubtAddentTwo;
+
+
+   let taskMultAddentOne = Math.floor(Math.random() * 10);
+    let taskMultAddentTwo = Math.floor(Math.random() * 10);
+    let taskMultAddentResult = taskMultAddentOne * taskMultAddentTwo;
+
+
+    let taskDivisionAddentOne = Math.floor(Math.random() * 10);
+    let taskDivisionAddentTwo = Math.floor(Math.random() * 10);
+    let taskDivisionAddentResult = taskDivisionAddentOne / taskDivisionAddentTwo;
+
+
+
+    let answerSum = prompt(`решите пример и напишите результат: ${taskSumAddentOne} + ${taskSumAddentTwo} = ?`);
+    if(answerSum == ''){
+        console.log(`Вы нечего не ввели`);
+        continue;
+    }
+    if (answerSum == null) {
+        console.log(`Игра прервона`);
+        return;
+    }
+    taskSumAddentResult == answerSum ? alert(`Решение верное`) : alert(`Решение не верно`);
+
+
+    let answerSubt = prompt(`решите пример и напишите результат: ${taskSubtAddentOne} - ${taskSubtAddentTwo} = ?`);
+    if(answerSubt == ''){
+        console.log(`Вы нечего не ввели`);
+        continue;
+    }
+    if (answerSubt == null) {
+        console.log(`Игра прервона`);
+        return;
+    }
+    taskSubtAddentResult == answerSubt ? alert(`Решение верное`) : alert(`Решение не верно`);
+
+
+    let answerMult = prompt(`решите пример и напишите результат: ${taskMultAddentOne} * ${taskMultAddentTwo} = ?`);
+    if(answerMult == ''){
+        console.log(`Вы нечего не ввели`);
+        continue;
+    }
+    if (answerMult == null) {
+        console.log(`Игра прервона`);
+        return;
+    }
+    taskMultAddentResult == answerMult ? alert(`Решение верное`) : alert(`Решение не верно`);
+
+
+    let answerDivision = prompt(`решите пример и напишите результат: ${taskDivisionAddentOne} / ${taskDivisionAddentTwo} = ?`);
+    if(answerDivision == ''){
+        console.log(`Вы нечего не ввели`);
+        continue;
+    }
+    if (answerDivision == null) {
+        console.log(`Игра прервона`);
+        return;
+    }
+    taskDivisionAddentResult == answerDivision ? alert(`Решение верное`) : alert(`Решение не верно`);return;
+
+    }
+}
+
+//мини игра Переверни текст
+document.getElementById('myButton').onclick = reversText;
+function reversText() {
+    
+    let userText = prompt(`Введите слово которое вы хотите перевернуть `);
+
+    if (userText === null) {
+        console.log(`Игра прервона`);
+        return;
+    }
+
+    if (userText === '') {
+        console.log(`Вы ничего не ввели`);
+        return;
+    }
+
+    if (/\d/.test(userText)) {
+        alert(`Вы ввели чесло вместо слова`);
+        return;
+    } 
+    
+    let rezultText = userText.split('').reverse().join('');
+    alert(`Введёное вами слово ${userText} \n перевёрнутое слово ${rezultText}`);
+    
+}
+
+// мини игра Простая векторина (типа того)
 const quiz = [
     {
         question: "Какой цвет неба?",
@@ -77,116 +214,19 @@ if (numberFinger == quiz[2].correctAnswer) {
 console.log(`Количество правельных ответов : ${counter}`);
 
 }
-startQuiz();
 
 
-document.getElementById('myButton').onclick = guessNumber;
+// Задания для работы с кодом 
+// Задание 1
+let js = 'js';
+console.log(js.toUpperCase());
 
-function guessNumber() {
-    
-    let num = Math.floor(Math.random() * 100) + 1;
+// Задание 2 
+const array = ['Apple', 'Banana', 'Apricot', 'avocado', 'Ananas'];
+const comparison = 'ap';
 
-    while (true) {
+let lowerComparison = comparison.toLowerCase();
 
-    let answer = prompt(`Угадайте число от 1 до 100`);
-        
-        if (answer == '') {
-            console.log(`Вы нечего не ввели`);
-            continue;
-        } 
-        if (answer === null) {
-            console.log(`Вы прервали игру`);
-            return;
-        }
+let filterArray = array.filter(array => array.toLowerCase().startsWith(lowerComparison));
 
-
-        if( answer < num) {
-            alert(`Введённое число меньше`);
-        }
-        else if( answer > num) {
-            alert(`Введённое число больше`);
-        }
-        else {
-            alert(`Вы угадали число`);
-            console.log(`Поздравляю`);
-            return;
-        }
-    }
-}
-guessNumber();
-
-
-document.getElementById('myButton').onclick = simpleArithmetic;
-function simpleArithmetic() {
-
-    while (true) {
-        
-    let taskSumAddentOne = Math.floor(Math.random() * 100);
-    let taskSumAddentTwo = Math.floor(Math.random() * 100);
-    let taskSumAddentResult = taskSumAddentOne + taskSumAddentTwo;
-
-    let taskSubtAddentOne = Math.floor(Math.random() * 100);
-    let taskSubtAddentTwo = Math.floor(Math.random() * 100);
-    let taskSubtAddentResult = taskSubtAddentOne - taskSubtAddentTwo;
-
-
-   let taskMultAddentOne = Math.floor(Math.random() * 10);
-    let taskMultAddentTwo = Math.floor(Math.random() * 10);
-    let taskMultAddentResult = taskMultAddentOne * taskMultAddentTwo;
-
-
-    let taskDivisionAddentOne = Math.floor(Math.random() * 10);
-    let taskDivisionAddentTwo = Math.floor(Math.random() * 10);
-    let taskDivisionAddentResult = taskDivisionAddentOne / taskDivisionAddentTwo;
-
-
-
-    let answerSum = prompt(`решите пример и напишите результат: ${taskSumAddentOne} + ${taskSumAddentTwo} = ?`);
-    if(answerSum == ''){
-        console.log(`Вы нечего не ввели`);
-        continue;
-    }
-    if (answerSum == null) {
-        console.log(`Игра прервона`);
-        return;
-    }
-    taskSumAddentResult == answerSum ? alert(`Решение верное`) : alert(`Решение не верно`);
-
-
-    let answerSubt = prompt(`решите пример и напишите результат: ${taskSubtAddentOne} - ${taskSubtAddentTwo} = ?`);
-    if(answerSubt == ''){
-        console.log(`Вы нечего не ввели`);
-        continue;
-    }
-    if (answerSubt == null) {
-        console.log(`Игра прервона`);
-        return;
-    }
-    taskSubtAddentResult == answerSubt ? alert(`Решение верное`) : alert(`Решение не верно`);
-
-
-    let answerMult = prompt(`решите пример и напишите результат: ${taskMultAddentOne} * ${taskMultAddentTwo} = ?`);
-    if(answerMult == ''){
-        console.log(`Вы нечего не ввели`);
-        continue;
-    }
-    if (answerMult == null) {
-        console.log(`Игра прервона`);
-        return;
-    }
-    taskMultAddentResult == answerMult ? alert(`Решение верное`) : alert(`Решение не верно`);
-
-
-    let answerDivision = prompt(`решите пример и напишите результат: ${taskDivisionAddentOne} / ${taskDivisionAddentTwo} = ?`);
-    if(answerDivision == ''){
-        console.log(`Вы нечего не ввели`);
-        continue;
-    }
-    if (answerDivision == null) {
-        console.log(`Игра прервона`);
-        return;
-    }
-    taskDivisionAddentResult == answerDivision ? alert(`Решение верное`) : alert(`Решение не верно`);return;
-
-    }
-}
+console.log(filterArray);
