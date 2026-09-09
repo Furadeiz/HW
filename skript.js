@@ -219,7 +219,7 @@ console.log(`Количество правельных ответов : ${counte
 // Задания для работы с кодом 
 // Задание 1
 let js = 'js';
-console.log(js.toUpperCase());
+console.log(`Задание 1 : ${js.toUpperCase()}`);
 
 // Задание 2 
 const array = ['Apple', 'Banana', 'Apricot', 'avocado', 'Ananas'];
@@ -229,4 +229,86 @@ let lowerComparison = comparison.toLowerCase();
 
 let filterArray = array.filter(array => array.toLowerCase().startsWith(lowerComparison));
 
-console.log(filterArray);
+console.log(`Задание 2 : ${filterArray}`);
+
+// Задание 3 
+let rounding = 32.58884; 
+
+let roundingFloor = Math.floor(rounding);
+let roundingCeil = Math.ceil(rounding);
+let roundingRound = Math.round(rounding);
+
+console.log(`Задание 3.1 : ${roundingFloor}`);
+console.log(`Задание 3.2 : ${roundingCeil}`);
+console.log(`Задание 3.3 : ${roundingRound}`);
+
+// Задание 4
+let arrayMinMax = [52, 53, 49, 77, 21, 32 ];
+
+let max = Math.max(...arrayMinMax);
+console.log(`Задание 4 : ${max}`);
+let min = Math.min(...arrayMinMax);
+console.log(`Задание 4 : ${min}`);
+
+// Задание 5
+let random = Math.floor(Math.random() * 10) + 1;
+console.log(`Задание 5 : ${random}`);
+
+
+// Задание 6
+let userLength = Number(prompt(`Введите число длина массива будет в двое меньше`));
+
+if (isNaN(userLength) || userLength <= 0 )  {
+    console.log(`Введите положительное число`);
+}
+else {
+    function RandomNumber() {
+     const arrayRandomNumber = [];
+     const lengthArrayRandomNumber = Math.floor(userLength / 2);
+    for (let i = 0; i < lengthArrayRandomNumber; i++) {
+        let randomNumber = Math.floor(Math.random() * userLength + 1);
+        arrayRandomNumber.push(randomNumber);
+    }
+    console.log(`задание 6 : ${arrayRandomNumber}`);
+ }RandomNumber();
+}
+ 
+// Задание 7 
+let userNumberOne = Number(prompt(`Введите первое число`));
+let userNumberTwo = Number(prompt(`Введите второе число`));
+
+function randomRangeTwoNumber() {
+    let rezultRange = Math.floor(Math.random() * (userNumberOne - userNumberTwo + 1)) + userNumberTwo;
+
+    console.log(`задание 7 : ${rezultRange}`);
+}randomRangeTwoNumber();
+
+// задание 8
+let date = new Date;
+console.log(date);
+
+// задание 9 
+let currentDate = new Date;
+
+currentDate.setDate(currentDate.getDate() + 73)
+
+console.log(currentDate);
+
+// задание 10
+function correctFormatDate() {
+
+const days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+const day = currentDate.getDate();
+const month = months[currentDate.getMonth()];
+const year = currentDate.getFullYear();
+const weekday = days[currentDate.getDay()];
+
+const hours = currentDate.getHours()
+const minutes = currentDate.getMinutes();
+const seconds = currentDate.getSeconds();
+
+console.log(`Дата: ${day} ${month} ${year} - это ${weekday}. \n Время: ${hours}:${minutes}:${seconds} `)
+
+}correctFormatDate();
