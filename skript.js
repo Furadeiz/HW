@@ -222,14 +222,17 @@ let js = 'js';
 console.log(`Задание 1 : ${js.toUpperCase()}`);
 
 // Задание 2 
+function filterBySrt(arr,str) {
+    const lowerStr = str.toLowerCase();
+    return arr.filter(item => item.toLowerCase().startsWith(lowerStr));
+    
+}
 const array = ['Apple', 'Banana', 'Apricot', 'avocado', 'Ananas'];
 const comparison = 'ap';
 
-let lowerComparison = comparison.toLowerCase();
+let rezultArray = filterBySrt(array, comparison);
 
-let filterArray = array.filter(array => array.toLowerCase().startsWith(lowerComparison));
-
-console.log(`Задание 2 : ${filterArray}`);
+console.log(`Задание 2 : ${rezultArray}`);
 
 // Задание 3 
 let rounding = 32.58884; 
@@ -251,8 +254,12 @@ let min = Math.min(...arrayMinMax);
 console.log(`Задание 4 : ${min}`);
 
 // Задание 5
-let random = Math.floor(Math.random() * 10) + 1;
-console.log(`Задание 5 : ${random}`);
+function rand(random) {
+     random = Math.floor(Math.random() * 10) + 1;
+     return random;
+}
+let rezultRandom = rand();
+console.log(`Задание 5 : ${rezultRandom}`);
 
 
 // Задание 6
@@ -262,25 +269,30 @@ if (isNaN(userLength) || userLength <= 0 )  {
     console.log(`Введите положительное число`);
 }
 else {
-    function RandomNumber() {
+    function RandomNumber(userLengths) {
+        userLengths = userLength;
      const arrayRandomNumber = [];
-     const lengthArrayRandomNumber = Math.floor(userLength / 2);
+     const lengthArrayRandomNumber = Math.floor(userLengths / 2);
     for (let i = 0; i < lengthArrayRandomNumber; i++) {
-        let randomNumber = Math.floor(Math.random() * userLength + 1);
+        let randomNumber = Math.floor(Math.random() * userLength);
         arrayRandomNumber.push(randomNumber);
     }
     console.log(`задание 6 : ${arrayRandomNumber}`);
+    return arrayRandomNumber;
  }RandomNumber();
 }
  
 // Задание 7 
-let userNumberOne = Number(prompt(`Введите первое число`));
-let userNumberTwo = Number(prompt(`Введите второе число`));
+function randomRangeTwoNumber(userNumberOne, userNumberTwo) {
+    userNumberOne = Number(prompt(`Введите первое число`));
+    userNumberTwo = Number(prompt(`Введите второе число`));
 
-function randomRangeTwoNumber() {
     let rezultRange = Math.floor(Math.random() * (userNumberOne - userNumberTwo + 1)) + userNumberTwo;
-
-    console.log(`задание 7 : ${rezultRange}`);
+    if (userNumberOne < userNumberTwo) {
+        console.log(`задание 7 : -${rezultRange}`);
+    } else {
+        console.log(`задание 7 : ${rezultRange}`);
+    } 
 }randomRangeTwoNumber();
 
 // задание 8
@@ -295,20 +307,21 @@ currentDate.setDate(currentDate.getDate() + 73)
 console.log(currentDate);
 
 // задание 10
-function correctFormatDate() {
+function formatDate(date) {
+date = new Date;
 
 const days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
 const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
-const day = currentDate.getDate();
-const month = months[currentDate.getMonth()];
-const year = currentDate.getFullYear();
-const weekday = days[currentDate.getDay()];
+const day = date.getDate();
+const month = months[date.getMonth()];
+const year = date.getFullYear();
+const weekday = days[date.getDay()];
 
-const hours = currentDate.getHours()
-const minutes = currentDate.getMinutes();
-const seconds = currentDate.getSeconds();
+const hours = date.getHours()
+const minutes = date.getMinutes();
+const seconds = date.getSeconds();
 
 console.log(`Дата: ${day} ${month} ${year} - это ${weekday}. \n Время: ${hours}:${minutes}:${seconds} `)
 
-}correctFormatDate();
+}formatDate();
