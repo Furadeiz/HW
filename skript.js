@@ -255,8 +255,7 @@ console.log(`Задание 4 : ${min}`);
 
 // Задание 5
 function rand(random) {
-     random = Math.floor(Math.random() * 10) + 1;
-     return random;
+     return Math.floor(Math.random() * 10) + 1;
 }
 let rezultRandom = rand();
 console.log(`Задание 5 : ${rezultRandom}`);
@@ -269,12 +268,11 @@ if (isNaN(userLength) || userLength <= 0 )  {
     console.log(`Введите положительное число`);
 }
 else {
-    function RandomNumber(userLengths) {
-        userLengths = userLength;
+    function RandomNumber() {
      const arrayRandomNumber = [];
-     const lengthArrayRandomNumber = Math.floor(userLengths / 2);
+     const lengthArrayRandomNumber = Math.floor(userLength / 2);
     for (let i = 0; i < lengthArrayRandomNumber; i++) {
-        let randomNumber = Math.floor(Math.random() * userLength);
+        let randomNumber = Math.floor(Math.random() * (userLength + 1));
         arrayRandomNumber.push(randomNumber);
     }
     console.log(`задание 6 : ${arrayRandomNumber}`);
@@ -284,16 +282,18 @@ else {
  
 // Задание 7 
 function randomRangeTwoNumber(userNumberOne, userNumberTwo) {
-    userNumberOne = Number(prompt(`Введите первое число`));
-    userNumberTwo = Number(prompt(`Введите второе число`));
+    let min = Math.min(userNumberOne, userNumberTwo);
+    let max = Math.max(userNumberOne, userNumberTwo);
 
-    let rezultRange = Math.floor(Math.random() * (userNumberOne - userNumberTwo + 1)) + userNumberTwo;
-    if (userNumberOne < userNumberTwo) {
-        console.log(`задание 7 : -${rezultRange}`);
-    } else {
+    let rezultRange = Math.floor(Math.random() * (max - min + 1)) + min;
+    
         console.log(`задание 7 : ${rezultRange}`);
-    } 
-}randomRangeTwoNumber();
+}
+
+let One = Number(prompt(`Введите первое число`));
+let Two = Number(prompt(`Введите второе число`));
+
+randomRangeTwoNumber(One, Two);
 
 // задание 8
 let date = new Date;
@@ -308,7 +308,6 @@ console.log(currentDate);
 
 // задание 10
 function formatDate(date) {
-date = new Date;
 
 const days = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
 const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
@@ -318,10 +317,10 @@ const month = months[date.getMonth()];
 const year = date.getFullYear();
 const weekday = days[date.getDay()];
 
-const hours = date.getHours()
+const hours = date.getHours();
 const minutes = date.getMinutes();
 const seconds = date.getSeconds();
 
 console.log(`Дата: ${day} ${month} ${year} - это ${weekday}. \n Время: ${hours}:${minutes}:${seconds} `)
 
-}formatDate();
+}formatDate(new Date());
