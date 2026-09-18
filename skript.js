@@ -153,21 +153,54 @@
             return;
         }
 
-        let answer = Number(userAnswer);
-        array = ["камень", "ножницы", "бумага"];
+        const array = ["камень", "ножницы", "бумага"];
+            let randomAnswerIndex = Math.floor(Math.random() * array.length);
+            const pcAnswer = array[randomAnswerIndex];
+            let user = userAnswer.toLowerCase().trim();
+            let userNumber = Number(userAnswer);
+            let userIndex = userNumber - 1;
 
-            let randomAnswerIndex = Math.floor(Math.random() * 3);
 
-            if (randomAnswerIndex == answer) {
-                return console.log(`ничья \n ${randomAnswerIndex}`);
-            } else if(randomAnswerIndex > answer) {
-                return console.log(`Порожение \n ${randomAnswerIndex}`);
-            }else if(randomAnswerIndex == 1 && answer == 3) {
-                return console.log(`Порожение \n ${randomAnswerIndex}`);
-            }else{
-                return console.log(`Победа \n ${randomAnswerIndex}`);
+if (!isNaN(userNumber)) {
+    //ответ цифрой
+        if  (
+            ( userIndex == 0 && randomAnswerIndex == 1)||
+            ( userIndex == 2 && randomAnswerIndex == 0)||
+            ( userIndex == 1 && randomAnswerIndex == 2)
+            ) {
+            alert(`Победа \n компьютер выбрал ${pcAnswer}`);
             }
+        else if(
+            ( userIndex == 1 && randomAnswerIndex == 0)||
+            ( userIndex == 2 && randomAnswerIndex == 1)||
+            ( userIndex == 0 && randomAnswerIndex == 2)
+            ) {
+            alert(`Порожение \n компьютер выбрал ${pcAnswer}`);
+            }
+        else{
+            alert(`Ничия \n компьютер выбрал ${pcAnswer}`);
+            }
+} else {
+    //ответ словам
+    if (
+        ( user == `бумага`&& pcAnswer == 'камень')||
+        ( user == `камень`&& pcAnswer == 'ножницы')||
+        ( user == `ножницы`&& pcAnswer == 'бумага')
+        ){
+        alert(`Победа \n компьютер выбрал ${pcAnswer}`);
+        }
+    else if(
+            ( user == `ножницы` && pcAnswer == 'камень')||
+            ( user == `бумага` && pcAnswer == 'ножницы')||
+            ( user == `камень`&& pcAnswer == 'бумага')
+        ){
+        alert(`Порожение \n компьютер выбрал ${pcAnswer}`);
+        }
+    else{
+        alert(`Ничия \n компьютер выбрал ${pcAnswer}`);
+        }
     }
+}
 
     // мини игра Простая векторина (типа того)
     const quiz = [
@@ -296,13 +329,11 @@
             console.log(date.toLocaleTimeString());
         }, 3000);
 
-
         setTimeout(() => {
         clearInterval(interval);
             console.log('30 секунд прошло')
         }, deadline * 1000)
     };
-
     timer(30);
 
     //задание 4
